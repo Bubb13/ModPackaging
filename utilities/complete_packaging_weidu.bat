@@ -31,7 +31,9 @@ set sfx_banner=%ico_folder%\weidu_banner.bmp
 set sfx_conf=mod.conf
 
 REM /* generate HTML versions of Markdown files */
-dotnet "%~dp0\md2html\md2html.dll" -f https://gibberlings3.github.io/Documentation/readmes/style/g3icon.ico -s https://gibberlings3.github.io/Documentation/readmes/style/g3md.css -o %mod_folder% .
+if [%generate_readme%]==[1] (
+  dotnet "%~dp0\md2html\md2html.dll" -f https://gibberlings3.github.io/Documentation/readmes/style/g3icon.ico -s https://gibberlings3.github.io/Documentation/readmes/style/g3md.css -o %mod_folder% .
+)
 
 REM /* remove any previously created archives */
 del win_archive >nul 2>nul
