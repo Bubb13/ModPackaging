@@ -1,0 +1,1 @@
+@powershell.exe -ExecutionPolicy Unrestricted -file "%~dp0patch_winrar.ps1" -File %1
